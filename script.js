@@ -22,6 +22,7 @@ $(function() {
             var $columnCardList = $('<ul>').addClass('column-card-list');
             var $columnDelete = $('<button>').addClass('btn-delete').text('x');
             var $columnAddCard = $('<button>').addClass('add-card').text('Add a card');
+            var $columnPlaceHolder = $columnCardList.addClass('card-placeholder');
 
             $columnDelete.click(function() {
                 self.removeColumn();
@@ -34,7 +35,9 @@ $(function() {
             $column.append($columnTitle)
                 .append($columnDelete)
                 .append($columnAddCard)
-                .append($columnCardList);
+                .append($columnCardList)
+                .append($columnPlaceHolder);
+             
             return $column;
             }
         }
@@ -46,6 +49,7 @@ $(function() {
         removeColumn: function() {
             this.$element.remove();
         }
+
     };
 
     function Card(description) {
@@ -85,13 +89,12 @@ $(function() {
         },
         $element: $('#board .column-container')
     };
-
+       
     function initSortable() {
         $('.column-card-list').sortable({
             connectWith: '.column-card-list',
             placeholder: 'card-placeholder',
-            connectToo: 'card-placeholder',
-        }).disableSelection();
+        }).disableSelection()
     }
 
     $('.create-column').click(function(){
@@ -113,9 +116,10 @@ $(function() {
 
     var card1 = new Card('New task');
     var card2 = new Card('Create kanban boards');
-
+   
 
     todoColumn.addCard(card1);
     doingColumn.addCard(card2);
+    
 
 })

@@ -47,6 +47,10 @@ body {
 .column ul {
 	list-style: none;
 	margin: 20px;
+	border: none;
+}
+.column ul:last-child {
+	margin-right: 20px;
 }
 .card {
 	border: 1px dashed #ccc;
@@ -60,11 +64,13 @@ body {
 
 .card-placeholder {
 	border: 2px outset;
-	height: 40px;
 	border-radius: 2px;
 	list-style-type: none;
-	width: 100%;
+	height: 30px;
+	margin: 10px auto;
+	width: auto;
 }
+
 .card-description {
 	margin: 15px auto;
 }
