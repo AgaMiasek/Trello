@@ -1,0 +1,70 @@
+body {
+	background-color: #d3e8b0;
+	font-family: 'Roboto', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+.board {
+	width: 100%;
+	max-width: 1200px;
+	height: auto;
+	margin: 20px auto;
+	border: 2px dotted green;
+	border-radius: 20px;
+}
+.board h1 {
+	color: green;
+	text-transform: uppercase;
+	text-align: center;
+}
+.create-column {
+	padding: 10px;
+	margin: 0 20px;
+	border-radius: 10px;
+	background-color: #51a8d1;
+}
+.column {
+	float: left;
+	display: inline-block;
+	width: 33.33%;
+}
+.column-container {
+	text-align: center;	
+	background-color: lightyellow;
+	height: 70vh;
+	width: 100%;
+}
+.column-container .add-card {
+	padding: 10px;
+	margin: 0 20px;
+	border-radius: 10px;
+	background-color: #83ba35;
+}
+.column-container .btn-delete {
+	background-color: #ce301e;
+	border-radius: 50%;
+} 
+.column ul {
+	list-style: none;
+	margin: 20px;
+}
+.card {
+	border: 1px dashed #ccc;
+	background-color: #fff;
+	margin: 10px auto;
+}
+.card .btn-delete {
+	float: left;
+
+}
+
+.card-placeholder {
+	border: 2px outset;
+	height: 40px;
+	border-radius: 2px;
+	list-style-type: none;
+	width: 100%;
+}
+.card-description {
+	margin: 15px auto;
+}
