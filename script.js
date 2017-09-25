@@ -1,16 +1,16 @@
 $(function() {
 	function randomString() {
-	var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ';
-	var str = '';
-	var i = 0;
+		var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ';
+		var str = '';
+		var i = 0;
 		for (i = 0; i < 10; i++) {
 			str += chars[Math.floor(Math.random() * chars.length)];
 		}
-	return str;
+		return str;
 	}
 
 	function Column(name) {
-		var self = this; 
+		var self = this;
 
 		this.id = randomString();
 		this.name = name;
@@ -27,7 +27,7 @@ $(function() {
 			$columnDelete.click(function() {
 				self.removeColumn();
 			});
-			
+
 			$columnAddCard.click(function() {
 				self.addCard(new Card(prompt("Enter the name of the card")));
 			});
@@ -37,7 +37,7 @@ $(function() {
 				.append($columnAddCard)
 				.append($columnCardList)
 				.append($columnPlaceHolder);
-			 
+
 			return $column;
 		}
 	}
@@ -57,7 +57,7 @@ $(function() {
 
 		this.id = randomString();
 		this.description = description;
-		this.$element = createCard(); 
+		this.$element = createCard();
 
 		function createCard() {
 			var $card = $('<li>').addClass('card');
@@ -74,7 +74,7 @@ $(function() {
 			return $card;
 		}
 	}
-	
+
 	Card.prototype = {
 		removeCard: function() {
 			this.$element.remove();
@@ -89,7 +89,7 @@ $(function() {
 		},
 		$element: $('#board .column-container')
 	};
-	   
+
 	function initSortable() {
 		$('.column-card-list').sortable({
 			connectWith: '.column-card-list',
@@ -103,12 +103,12 @@ $(function() {
 		board.addColumn(column);
 	});
 
-	
+
 	var todoColumn = new Column('To do');
 	var doingColumn = new Column('Doing');
 	var doneColumn = new Column('Done');
 
- 
+
 	board.addColumn(todoColumn);
 	board.addColumn(doingColumn);
 	board.addColumn(doneColumn);
@@ -116,10 +116,10 @@ $(function() {
 
 	var card1 = new Card('New task');
 	var card2 = new Card('Create kanban boards');
-   
+
 
 	todoColumn.addCard(card1);
 	doingColumn.addCard(card2);
-	
+
 
 })

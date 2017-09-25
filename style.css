@@ -4,12 +4,12 @@ body {
 	margin: 0;
 	padding: 0;
 }
-.clearfix:before,
+/* .clearfix:before,
 .clearfix:after {
   content: "";
   display: table;
   clear: both;
-}
+} */
 .board {
 	width: 100%;
 	max-width: 1200px;
@@ -38,15 +38,16 @@ body {
 .column-container {
 	text-align: center;	
 	background-color: lightyellow;
-	min-width: 500px;
 	padding-bottom: 20px;
 	width: 100%;
 	display: inline-flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
 }
 .column {
 	flex: 1;
-	justify-content: space-between;
 	padding-bottom: 50px;
+	min-width: 300px;
 }
 .column-container .add-card {
 	padding: 10px;
